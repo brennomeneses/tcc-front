@@ -62,23 +62,44 @@
 					</div>
 				</div>
 				<div class="pageContent">
-					<div class="rolesAreaTitle">
-						<div class="container text-center">
-						  <div class="row">
-						    <div class="col">
-						      <p class="mx-auto">Backlog</p>
-						    </div>
-						    <div class="col">
-						      <p class="mx-auto">Em Andamento</p>
-						    </div>
-						    <div class="col">
-						      <p class="mx-auto">Testando</p>
-						    </div>
-								<div class="col">
-						      <p class="mx-auto">Concluído</p>
-						    </div>
-						  </div>
-						</div>
+					<div class="container text-center">
+					  <div class="row">
+					    <div class="col">
+								<div class="colHeader"><h3>Backlog</h3>
+									<form id="todo-form">
+										<input type="text" placeholder="New TODO..." id="todo-input" />
+										<button type="submit">Add +</button>
+									</form>
+								</div>
+								<div class="colContent swim-lane todoLane">
+									<div class="contentCard normalStatusCard task" draggable="true"></div>
+									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+									<div class="contentCard normalStatusCard task" draggable="true"></div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="colHeader"><h3>Em Andamento</h3></div>
+								<div class="colContent swim-lane">
+									<div class="contentCard normalStatusCard task" draggable="true"></div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="colHeader"><h3>Testando</h3></div>
+								<div class="colContent swim-lane">
+									<div class="contentCard normalStatusCard task" draggable="true"></div>
+									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+									<div class="contentCard normalStatusCard task" draggable="true"></div>
+									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="colHeader"><h3>Concluído</h3></div>
+								<div class="colContent swim-lane">
+									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+								</div>
+							</div>
+					  </div>
 					</div>
 				</div>
 			</div>

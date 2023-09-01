@@ -125,10 +125,54 @@ div.pageContent{
   float: right;
   width: 73.72%;
 }
-div.rolesAreaTitle{
-  height: 100px;
-  width: 80%;
-  position: fixed;
-  background-color: rgba(224, 224, 224, 0.8);
+div.pageContent .col{
+  height: 100%;
+}
+.colHeader{
+  height: 50px;
+}
+.colHeader h3{
+  margin-top: 15px;
+}
+.colContent{
+  height: 750px;
+  overflow: auto;
+}
+.contentCard{
+  margin-bottom: 20px;
+  height: 200px;
+  width: 100%;
+  outline: none;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+.normalStatusCard{
+  border-left: 10px solid black;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.delayedStatusCard{
+  border-left: 10px solid #FF4343;
+  border-top: 1px solid #FF4343;
+  border-right: 1px solid #FF4343;
+  border-bottom: 1px solid #FF4343;
+}
+
+/* DRAG FEATURE SECTION*/
+.is-dragging {
+  scale: 1.05;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  background: rgb(50, 50, 50);
+  color: white;
+}
+.task {
+  background: white;
+  color: black;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+
+  padding: 12px;
+  border-radius: 4px;
+
+  font-size: 16px;
+  cursor: move;
 }

@@ -38,8 +38,8 @@
 						<p class="text-center offText">Nenhuma Reunião Selecionada</p>
 
 						<div class="row justify-content-start">
-							<div class="col-8"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
-							<div class="col-4"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
+							<div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
+							<div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
 						</div>
 
 						<div class="row justify-content-start">
@@ -62,41 +62,73 @@
 					</div>
 				</div>
 				<div class="pageContent">
+
+					<!-- Modal -->
+					<div class="modal fade" id="projectInformationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-dialog-centered">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h1 class="modal-title fs-5" id="exampleModalLabel">Título do Projeto</h1>
+					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					      </div>
+					      <div class="modal-body">
+					        ...
+					      </div>
+					      <div class="modal-footer">
+									<button class="btnBottom buttonStyle smallButton col-4" data-bs-toggle="modal" data-bs-target="#projectInformationModal" data-bs-dismiss="modal">Fechar</button>
+								</div>
+					    </div>
+					  </div>
+					</div>
+
+
 					<div class="container text-center">
 					  <div class="row">
 					    <div class="col">
-								<div class="colHeader"><h3>Backlog</h3>
-									<form id="todo-form">
-										<input type="text" placeholder="New TODO..." id="todo-input" />
-										<button type="submit">Add +</button>
-									</form>
-								</div>
+								<div class="colHeader"><h3>Backlog</h3></div>
 								<div class="colContent swim-lane todoLane">
-									<div class="contentCard normalStatusCard task" draggable="true"></div>
-									<div class="contentCard delayedStatusCard task" draggable="true"></div>
-									<div class="contentCard normalStatusCard task" draggable="true"></div>
+									<div class="contentCard normalStatusCard task" draggable="true">
+										<h4>Título do Projeto</h4><hr>
+										<div class="cardUser">
+											<div class="cardUserProfilePicArea"></div>
+											<div class="cardUserProfileInfoArea">
+												<p class="text-start">Cargo do Usuário</p>
+												<h5 class="text-start cardUsername">Nome do Usuário</h5>
+											</div>
+										</div>
+										<button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
+									</div>
+
+									<div class="contentCard delayedStatusCard task" draggable="true">
+										<h4>Título do Projeto</h4><hr>
+										<div class="cardUser">
+											<div class="cardUserProfilePicArea"></div>
+											<div class="cardUserProfileInfoArea">
+												<p class="text-start">Cargo do Usuário</p>
+												<h5 class="text-start cardUsername">Nome do Usuário</h5>
+											</div>
+										</div>
+										<button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
+										<p class="delayedAlert">PROJETO ATRASADO</p>
+									</div>
 								</div>
 							</div>
 							<div class="col">
 								<div class="colHeader"><h3>Em Andamento</h3></div>
 								<div class="colContent swim-lane">
-									<div class="contentCard normalStatusCard task" draggable="true"></div>
+
 								</div>
 							</div>
 							<div class="col">
 								<div class="colHeader"><h3>Testando</h3></div>
 								<div class="colContent swim-lane">
-									<div class="contentCard normalStatusCard task" draggable="true"></div>
-									<div class="contentCard delayedStatusCard task" draggable="true"></div>
-									<div class="contentCard delayedStatusCard task" draggable="true"></div>
-									<div class="contentCard normalStatusCard task" draggable="true"></div>
-									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+
 								</div>
 							</div>
 							<div class="col">
 								<div class="colHeader"><h3>Concluído</h3></div>
 								<div class="colContent swim-lane">
-									<div class="contentCard delayedStatusCard task" draggable="true"></div>
+
 								</div>
 							</div>
 					  </div>

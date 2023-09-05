@@ -1,140 +1,146 @@
 <html>
-	<head>
-		<title>Kokpit</title>
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="../js/script.js"></script>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-		<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
-	</head>
-	<body>
-		<div id="page">
-			<nav class="navbar navbarStyle position-fixed">
-			  <div class="container-fluid">
-			    <a class="navbar-brand" href="#">
-			      <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
-			    </a>
-			  </div>
-			</nav>
-			<div class="fullContent">
-				<div class="sidebar">
-					<h3 class="sidebarTopText text-center">Reuniões</h3>
-					<div class="meetings">
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-						<div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
-					</div>
+<head>
+    <title>Kokpit</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/todo.js" defer></script>
+    <script type="text/javascript" src="../js/drag.js" defer></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div id="page">
+        <nav class="navbar navbarStyle position-fixed">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
+                </a>
+            </div>
+        </nav>
+        <div class="fullContent">
+            <div class="sidebar">
+                <h3 class="sidebarTopText text-center">Reuniões</h3>
+                <div class="meetings">
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                    <div class="reuniao"><h4 class="text-center reuniaoText">14/05/2023 <span class="horaReuniao">14:37 - 15:04</span></h4></div>
+                </div>
 
-					<div class="sidebarFooter fixed-bottom">
+                <div class="sidebarFooter fixed-bottom">
 
-						<button type="submit" class="btnBottom buttonStyle bigButton buttonOff col-12">Exibir Resumo da Reunião</button>
-						<p class="text-center offText">Nenhuma Reunião Selecionada</p>
+                    <button type="submit" class="btnBottom buttonStyle bigButton buttonOff col-12">Exibir Resumo da Reunião</button>
+                    <p class="text-center offText">Nenhuma Reunião Selecionada</p>
 
-						<div class="row justify-content-start">
-							<div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
-							<div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
-						</div>
+                    <div class="row justify-content-start">
+                        <div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
+                        <div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
+                    </div>
 
-						<div class="row justify-content-start">
-							<div class="col-6"><p class="text-center offText">Nenhuma reunião<br>agendada para hoje.</p></div>
-							<div class="col-6"><button type="submit" class="btnBottom buttonStyle bigButton buttonOff loat-end">Iniciar Reunião</button></div>
-						</div>
-						<div class="row justify-content-start">
-							<div class="col-4"><button type="submit" class="btnBottom buttonStyle">Critérios</button></div>
-							<div class="col-4"><button type="submit" class="btnBottom buttonStyle">Novo Projeto</button></div>
-							<div class="col-4"><button type="submit" class="btnBottom buttonStyle float-end">Agendar Reunião</button></div>
-						</div>
+                    <div class="row justify-content-start">
+                        <div class="col-6"><p class="text-center offText">Nenhuma reunião<br>agendada para hoje.</p></div>
+                        <div class="col-6"><button type="submit" class="btnBottom buttonStyle bigButton buttonOff loat-end">Iniciar Reunião</button></div>
+                    </div>
+                    <div class="row justify-content-start">
+                        <div class="col-4"><button type="submit" class="btnBottom buttonStyle">Critérios</button></div>
+                        <div class="col-4"><button type="submit" class="btnBottom buttonStyle">Novo Projeto</button></div>
+                        <div class="col-4"><button type="submit" class="btnBottom buttonStyle float-end">Agendar Reunião</button></div>
+                    </div>
 
-						<div class="user"></div>
+                    <div class="user"></div>
 
-						<div class="row justify-content-start">
-							<div class="col-4"><button type="submit" class="buttonStyle">Perfil</button></div>
-							<div class="col-4"><button type="submit" class="buttonStyle">Configurações</button></div>
-							<div class="col-4"><button type="submit" class="buttonStyle float-end">Sair</button></div>
-						</div>
-					</div>
-				</div>
-				<div class="pageContent">
+                    <div class="row justify-content-start">
+                        <div class="col-4"><button type="submit" class="buttonStyle">Perfil</button></div>
+                        <div class="col-4"><button type="submit" class="buttonStyle">Configurações</button></div>
+                        <div class="col-4"><button type="submit" class="buttonStyle float-end">Sair</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pageContent">
 
-					<!-- Modal -->
-					<div class="modal fade" id="projectInformationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					  <div class="modal-dialog modal-dialog-centered">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <h1 class="modal-title fs-5" id="exampleModalLabel">Título do Projeto</h1>
-					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					      </div>
-					      <div class="modal-body">
-					        ...
-					      </div>
-					      <div class="modal-footer">
-									<button class="btnBottom buttonStyle smallButton col-4" data-bs-toggle="modal" data-bs-target="#projectInformationModal" data-bs-dismiss="modal">Fechar</button>
-								</div>
-					    </div>
-					  </div>
-					</div>
+                <!-- Modal -->
+                <div class="modal fade" id="projectInformationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Título do Projeto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btnBottom buttonStyle smallButton col-4" data-bs-toggle="modal" data-bs-target="#projectInformationModal" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-					<div class="container text-center">
-					  <div class="row">
-					    <div class="col">
-								<div class="colHeader"><h3>Backlog</h3></div>
-								<div class="colContent swim-lane todoLane">
-									<div class="contentCard normalStatusCard task" draggable="true">
-										<h4>Título do Projeto</h4><hr>
-										<div class="cardUser">
-											<div class="cardUserProfilePicArea"></div>
-											<div class="cardUserProfileInfoArea">
-												<p class="text-start">Cargo do Usuário</p>
-												<h5 class="text-start cardUsername">Nome do Usuário</h5>
-											</div>
-										</div>
-										<button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
-									</div>
+                <div class="container text-center">
+                    <div class="row">
+                        <br>
+                        <div class="row board">
+                            <form id="todo-form">
+                                <input type="text" placeholder="New TODO..." id="todo-input" />
+                                <button type="submit">Add +</button>
+                            </form>
 
-									<div class="contentCard delayedStatusCard task" draggable="true">
-										<h4>Título do Projeto</h4><hr>
-										<div class="cardUser">
-											<div class="cardUserProfilePicArea"></div>
-											<div class="cardUserProfileInfoArea">
-												<p class="text-start">Cargo do Usuário</p>
-												<h5 class="text-start cardUsername">Nome do Usuário</h5>
-											</div>
-										</div>
-										<button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
-										<p class="delayedAlert">PROJETO ATRASADO</p>
-									</div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="colHeader"><h3>Em Andamento</h3></div>
-								<div class="colContent swim-lane">
+                            <div class="lanes">
+                                <div class="col swim-lane" id="todo-lane">
+                                    <h3 class="heading">TODO</h3>
+                                    <div class="contentCard normalStatusCard task" draggable="true">
+                                        <h4>Título do Projeto</h4><hr>
+                                        <div class="cardUser">
+                                            <div class="cardUserProfilePicArea"></div>
+                                            <div class="cardUserProfileInfoArea">
+                                                <p class="text-start">Cargo do Usuário</p>
+                                                <h5 class="text-start cardUsername">Nome do Usuário</h5>
+                                            </div>
+                                        </div>
+                                        <button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
+                                    </div>
+                                    <div class="contentCard delayedStatusCard task" draggable="true">
+                                        <h4>Título do Projeto</h4><hr>
+                                        <div class="cardUser">
+                                            <div class="cardUserProfilePicArea"></div>
+                                            <div class="cardUserProfileInfoArea">
+                                                <p class="text-start">Cargo do Usuário</p>
+                                                <h5 class="text-start cardUsername">Nome do Usuário</h5>
+                                            </div>
+                                        </div>
+                                        <button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
+                                    </div>
+                                    <p class="task" draggable="true">Mow the lawn</p>
+                                </div>
 
-								</div>
-							</div>
-							<div class="col">
-								<div class="colHeader"><h3>Testando</h3></div>
-								<div class="colContent swim-lane">
+                                <div class="col swim-lane">
+                                    <h3 class="heading">Doing</h3>
 
-								</div>
-							</div>
-							<div class="col">
-								<div class="colHeader"><h3>Concluído</h3></div>
-								<div class="colContent swim-lane">
+                                    <p class="task" draggable="true">Binge 80 hours of Game of Thrones</p>
+                                </div>
 
-								</div>
-							</div>
-					  </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+                                <div class="col swim-lane">
+                                    <h3 class="heading">Done</h3>
+
+                                    <p class="task" draggable="true">
+                                        Watch video of a man raising a grocery store lobster as a pet
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

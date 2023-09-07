@@ -1,6 +1,6 @@
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -267,4 +267,30 @@ div.projects{
 }
 .redButton{
   background-color: #F97777;
+}
+.criteriaList{
+  height: 350px;
+  width: 650px;
+  overflow: auto;
+  text-align: center;
+}
+.criteriaLabel{
+  padding-bottom: 10px;
+}
+.criteriaInfoArea{
+  height: 75px;
+  border-top: 1px solid black;
+  overflow: hidden;
+}
+.criteriaInfoArea:hover {
+  overflow-y: scroll;
+}
+.criteriaDescription{
+  width: 150px;
+}
+.criteriaSmallDescription{
+  width: 75px;
+}
+.xlButton{
+  width: 300px;
 }

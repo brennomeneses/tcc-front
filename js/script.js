@@ -30,7 +30,7 @@ function portfolioManagerMainPage(){
   location.href = "portfolioManagerMainPage.html";
 }
 function newCriteria(){
-  // do some stuff
+  location.href = "portfolioManagerNewCriteria.html";
 }
 
 function newProject(){

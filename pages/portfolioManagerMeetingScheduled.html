@@ -1,0 +1,178 @@
+<html>
+<head>
+  <title>Kokpit</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/drag.js" defer></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <nav class="navbar navbarStyle position-fixed">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
+        </a>
+      </div>
+    </nav>
+    <div class="fullContent">
+      <div class="sidebar">
+        <h3 class="sidebarTopText text-center">Reuniões</h3>
+        <!-- Add here all meetings -->
+        <div class="meetings">
+          <!-- Meeting Object Start -->
+          <div class="reuniao"><h4 class="text-center reuniaoText"><span id="meetingDate">14/05/2023<span class="horaReuniao">
+            <span id="meetingStartTime">14:37</span> -
+            <span id="meetingEndTime">15:04</span>
+          </span></h4>
+          </div>
+          <!-- Meeting Object End -->
+        </div>
+
+        <div class="sidebarFooter fixed-bottom">
+
+          <button type="submit" class="btnBottom buttonStyle bigButton buttonOff col-12">Exibir Resumo da Reunião</button>
+          <p class="text-center offText">Nenhuma Reunião Selecionada</p>
+
+          <div class="row justify-content-start">
+            <div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
+            <div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <div class="col-12"><button type="submit" class="btnBottom buttonStyle bigButton  float-end">Iniciar Reunião</button></div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle" onclick="newCriteria()">Critérios</button></div>
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle" onclick="newProject()">Novo Projeto</button></div>
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle float-end" onclick="newMeeting()">Agendar Reunião</button></div>
+          </div>
+
+          <div class="user">
+            <div class="userProfilePicArea">
+              <!-- Add user profile pic-->
+            </div>
+            <div class="userProfileInfoArea">
+              <h5 class="text-start">Nome do Usuário</h5>
+              <p class="text-start">Cargo do Usuário</p>
+            </div>
+          </div>
+
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="buttonStyle">Perfil</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle">Configurações</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle float-end">Sair</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="pageContent">
+
+        <!-- Modal Start -->
+        <div class="modal fade" id="projectInformationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5"><span id="projectTitleModal">Título do Projeto</span>
+                <br><span class="projectStakeholderModal">Stakeholder: <span id="stakeholderName">Nome do Stakeholder</span></span></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h6>Descrição do Projeto:</h6>
+                <p>Lorem ipsum dolor sit amet. Et magni dolor aut quod rerum nam ullam voluptas. Sit rerum adipisci eum deserunt rerum et suscipit assumenda sed commodi assumenda eos omnis voluptatem. Sit sint dolorem et inventore sint quo tempore dolor ut dolores corrupti ut aliquid corporis aut quisquam animi.</p>
+                <h6>Custo Estimado: <span class="fw-normal">R$ 150.000</span></h6>
+                <h6>Duração Estimada: <span class="fw-normal">6 meses</span></h6><br>
+                <div class="row justify-content-start">
+                  <div class="col-6"><button type="submit" class="buttonStyle bigButton">Visualizar Critérios</button></div>
+                  <div class="col-6"><button type="submit" class="buttonStyle bigButton">Visualizar DICE</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal End -->
+
+        <div class="container text-center">
+          <div class="row">
+
+            <!--COLUMN START-->
+            <div class="col" id="backlog">
+              <div class="colHeader"><h3>Backlog</h3></div>
+              <div class="swim-lane colContent"> <!--Append column content here-->
+
+                <!--CARD START-->
+                <div class="contentCard normalStatusCard task" draggable="true"> <!-- A card with delayedStatusCard flag has any issue-->
+                  <h5>Título do Projeto</h5><hr>
+                  <div class="cardUser">
+                    <div class="cardUserProfilePicArea meetingProfilePic"></div>
+                    <div class="cardUserProfileInfoArea meetingProfileInfo">
+                      <p class="text-start">Cargo do Usuário</p>
+                      <h6 class="text-start cardUsername">Nome do Usuário</h6>
+                    </div>
+                  </div>
+                  <button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
+                  <!-- This div is null from default, and it must be filled wherever the project has an issue -->
+                  <div id="projectWarning">
+                    <!-- Every project with a warning must contain this paragraph (styled as delayedAlert) with the corresponding issue -->
+                  </div>
+                </div>
+                <!--CARD END-->
+
+                <!--CARD START-->
+                <div class="contentCard delayedStatusCard task" draggable="true"> <!-- A card with delayedStatusCard flag has any issue-->
+                  <h5>Título do Projeto</h5><hr>
+                  <div class="cardUser">
+                    <div class="cardUserProfilePicArea meetingProfilePic"></div>
+                    <div class="cardUserProfileInfoArea meetingProfileInfo">
+                      <p class="text-start">Cargo do Usuário</p>
+                      <h6 class="text-start cardUsername">Nome do Usuário</h6>
+                    </div>
+                  </div>
+                  <button class="btnBottom buttonStyle smallButton col-12" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações do Projeto</button>
+                  <!-- This div is null from default, and it must be filled wherever the project has an issue -->
+                  <div id="projectWarning">
+                    <!-- Every project with a warning must contain this paragraph (styled as delayedAlert) with the corresponding issue -->
+                    <p class="delayedAlert">PROJETO ATRASADO</p>
+                  </div>
+                </div>
+                <!--CARD END-->
+              </div>
+            </div><!--COLUMN END-->
+
+            <div class="col">
+              <div class="colHeader"><h3>Reunião <span id="meetingScheduledDay">14/07</span></h3></div>
+              <div class="swim-lane colContent">
+
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="colHeader"><h3>Em Andamento</h3></div>
+              <div class="swim-lane colContent">
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="colHeader"><h3>Testando</h3></div>
+              <div class="swim-lane colContent">
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="colHeader"><h3>Concluído</h3></div>
+              <div class="swim-lane colContent">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

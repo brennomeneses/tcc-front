@@ -268,28 +268,43 @@ div.projects{
 .redButton{
   background-color: #F97777;
 }
-.criteriaList{
-  height: 350px;
+.criteriaTitle{
   width: 650px;
-  overflow: auto;
-  text-align: center;
+  height: 40px;
 }
-.criteriaLabel{
-  padding-bottom: 10px;
+.smallCriteriaSize{
+  width: 80px;
 }
-.criteriaInfoArea{
-  height: 75px;
-  border-top: 1px solid black;
-  overflow: hidden;
-}
-.criteriaInfoArea:hover {
-  overflow-y: scroll;
-}
-.criteriaDescription{
+.mediumCriteriaSize{
   width: 150px;
 }
-.criteriaSmallDescription{
-  width: 75px;
+.criteriaList{
+  width: 650px;
+  height: 300px;
+  overflow-x: hidden;
+}
+.criteria{
+  height: 70px;
+  width: 650x;
+  border-top: 1px solid black;
+}
+.criteria:hover{
+  background-color: #eaffd6;
+  transition: .5s;
+}
+.selectedCriteria{
+  background-color: #bdf28a;
+}
+.criteriaContent{
+  height: 68px;
+  float: left;
+  margin-left: 15px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.criteriaText{
+  text-align: center;
+  margin-top: 2px;
 }
 .xlButton{
   width: 300px;

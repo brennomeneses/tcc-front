@@ -26,13 +26,29 @@ function newMeeting(){
 function scheduleMeeting(){
   location.href = "portfolioManagerMeetingScheduled.html";
 }
+
 function portfolioManagerMainPage(){
   location.href = "portfolioManagerMainPage.html";
 }
+
 function newCriteria(){
   location.href = "portfolioManagerNewCriteria.html";
 }
 
 function newProject(){
-  // do some stuff
+  location.href = "portfolioManagerNewProjectPartOne.html";
+}
+
+function returnNewProjectPartOne(){
+  location.href = "portfolioManagerNewProjectPartOne.html";
+  // Must retrieve all information gathered during part one conclusion
+}
+
+function newProjectPartTwo(){
+  location.href = "portfolioManagerNewProjectPartTwo.html";
+}
+
+function addNewProject(){
+  // Do some stuff
+  location.href = "portfolioManagerMainPage.html";
 }

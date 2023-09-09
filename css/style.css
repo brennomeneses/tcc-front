@@ -54,6 +54,33 @@ div.loginPage{
   height: 50px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 }
+input[type=file]{
+  height: 50px;
+  background-color: #F8F9FA;
+}
+select.selectList{
+  width: 300px;
+}
+div.longInput input[type=text]{
+  width: 800px;
+}
+div.midInput input[type=text]{
+  width: 272px;
+}
+.labelArea{
+  width: 200px;
+}
+.labelAreaMid{
+  width: 220px;
+  margin-left: 20px;
+}
+.labelAreaBig{
+  width: 320px;
+}
+.labelAreaSM{
+  width: 100px;
+  margin-left: 20px;
+}
 .buttonStyle{
   background-color: white;
   border: none;
@@ -79,6 +106,9 @@ div.loginPage{
 }
 .bigButton{
   width: 220px;
+}
+.dropdownButton{
+  background-color: white;
 }
 div.fullContent{
   padding-top: 131px;
@@ -268,6 +298,10 @@ div.projects{
 .redButton{
   background-color: #F97777;
 }
+.whiteButton{
+  color: black;
+  background-color: white;
+}
 .criteriaTitle{
   width: 650px;
   height: 40px;
@@ -308,4 +342,20 @@ div.projects{
 }
 .xlButton{
   width: 300px;
+}
+.newProjectCriteriaSelector{
+  height: 250px;
+  width: 1300px;
+  overflow: auto;
+  overflow-x:hidden;
+  margin-top: 10px;
+}
+.criteriaSelectorName{
+  overflow-x: hidden;
+  overflow: auto;
+  max-width: 400px;
+  height: 50px;
+}
+.criteriaSelectorDescription{
+  font-weight: normal;
 }

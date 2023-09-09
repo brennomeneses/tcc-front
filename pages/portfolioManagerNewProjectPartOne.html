@@ -1,0 +1,207 @@
+<html>
+<head>
+  <title>Kokpit</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/drag.js" defer></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <nav class="navbar navbarStyle position-fixed">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
+        </a>
+      </div>
+    </nav>
+    <div class="fullContent">
+      <div class="sidebar">
+        <h3 class="sidebarTopText text-center">Reuniões</h3>
+        <!-- Add here all meetings -->
+        <div class="meetings">
+          <!-- Meeting Object Start -->
+          <div class="reuniao"><h4 class="text-center reuniaoText"><span id="meetingDate">14/05/2023<span class="horaReuniao">
+            <span id="meetingStartTime">14:37</span> -
+            <span id="meetingEndTime">15:04</span>
+          </span></h4>
+          </div>
+          <!-- Meeting Object End -->
+        </div>
+
+        <div class="sidebarFooter fixed-bottom">
+
+          <button type="submit" class="btnBottom buttonStyle bigButton buttonOff col-12">Exibir Resumo da Reunião</button>
+          <p class="text-center offText">Nenhuma Reunião Selecionada</p>
+
+          <div class="row justify-content-start">
+            <div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
+            <div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
+          </div>
+
+          <div class="row justify-content-start">
+            <!-- offText class turns every text to an off design-->
+            <div class="col-6"><p class="text-center offText">Nenhuma reunião<br>agendada para hoje.</p></div>
+            <!-- buttonOff class turns every text to an off design-->
+            <div class="col-6"><button type="submit" class="btnBottom buttonStyle bigButton buttonOff float-end">Iniciar Reunião</button></div>
+          </div>
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle" onclick="newCriteria()">Critérios</button></div>
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle buttonSelected" onclick="portfolioManagerMainPage()">Novo Projeto</button></div>
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle float-end" onclick="newMeeting()">Agendar Reunião</button></div>
+          </div>
+
+          <div class="user">
+            <div class="userProfilePicArea">
+              <!-- Add user profile pic-->
+            </div>
+            <div class="userProfileInfoArea">
+              <h5 class="text-start">Nome do Usuário</h5>
+              <p class="text-start">Cargo do Usuário</p>
+            </div>
+          </div>
+
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="buttonStyle">Perfil</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle">Configurações</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle float-end">Sair</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="pageContent">
+        <br><h2 class="text-center">Novo Projeto</h2>
+        <br><h5 class="text-center">Informações Gerais</h5>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelArea"><h4>Nome: </h4></div>
+            </div>
+            <div class="col-auto">
+              <div class="longInput"><input type="text" class="form-control inputStyle" id="newProjectName"></div>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelArea"><h4>Stakeholder: </h4></div>
+            </div>
+            <div class="col-auto">
+              <div class="longInput"><input type="text" class="form-control inputStyle" id="newProjectStakeholder"></div>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelArea"><h4>Descrição: </h4></div>
+            </div>
+            <div class="col-auto">
+              <div class="longInput"><input type="text" class="form-control inputStyle" id="newProjectDescription"></div>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelArea"><h4>Custo Estimado: </h4></div>
+            </div>
+            <div class="col-auto">
+              <div class="midInput"><input type="text" class="form-control inputStyle" id="newProjectEstimatedCost"></div>
+            </div>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaMid"><h4>Duração Estimada: </h4></div>
+            </div>
+            <div class="col-auto">
+              <div class="midInput"><input type="text" class="form-control inputStyle" id="newProjectEstimatedDuration"></div>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelArea"><h5>Gerente de Projeto: </h5></div>
+            </div>
+            <div class="col-auto">
+              <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectSelectProjectManager">
+                <option value="1">Nome do Gerente de Projeto</option>
+                <option value="2">Nome do Gerente de Projeto</option>
+                <option value="3">Nome do Gerente de Projeto</option>
+              </select>
+            </div>
+          </div>
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaSM"><h4>Anexos: </h4></div>
+            </div>
+            <div class="col-auto">
+              <div class="midInput"><input type="file" class="form-control" id="newProjectAddFiles"></div>
+            </div>
+          </div>
+        </div>
+        <br><h4 class="text-center">Dice</h4>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaBig"><h5>Capacidade da Equipe:</h5></div>
+            </div>
+            <div class="col-auto">
+              <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceTeamCapacity">
+                <option value="5">Excelente</option>
+                <option value="4">Boa</option>
+                <option value="3">Média</option>
+                <option value="2">Baixa</option>
+              </select>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaBig"><h5>Compromisso do Stakeholder:</h5></div>
+            </div>
+            <div class="col-auto">
+              <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                <option value="5">Apoio Total</option>
+                <option value="4">Desejam Sucesso</option>
+                <option value="3">Neutro</option>
+                <option value="2">Relutante</option>
+              </select>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaBig"><h5>Compromisso dos Futuros Usários:</h5></div>
+            </div>
+            <div class="col-auto">
+              <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                <option value="5">Ansiosos</option>
+                <option value="4">Dispostos</option>
+                <option value="3">Relutantes</option>
+                <option value="2">Fortemente Relutante</option>
+              </select>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary redButton bigButton" onclick="portfolioManagerMainPage()">Cancelar</button>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary greenButton bigButton" onclick="newProjectPartTwo()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

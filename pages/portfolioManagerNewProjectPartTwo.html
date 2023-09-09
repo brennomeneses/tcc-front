@@ -1,0 +1,292 @@
+<html>
+<head>
+  <title>Kokpit</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/drag.js" defer></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <nav class="navbar navbarStyle position-fixed">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
+        </a>
+      </div>
+    </nav>
+    <div class="fullContent">
+      <div class="sidebar">
+        <h3 class="sidebarTopText text-center">Reuniões</h3>
+        <!-- Add here all meetings -->
+        <div class="meetings">
+          <!-- Meeting Object Start -->
+          <div class="reuniao"><h4 class="text-center reuniaoText"><span id="meetingDate">14/05/2023<span class="horaReuniao">
+            <span id="meetingStartTime">14:37</span> -
+            <span id="meetingEndTime">15:04</span>
+          </span></h4>
+          </div>
+          <!-- Meeting Object End -->
+        </div>
+
+        <div class="sidebarFooter fixed-bottom">
+
+          <button type="submit" class="btnBottom buttonStyle bigButton buttonOff col-12">Exibir Resumo da Reunião</button>
+          <p class="text-center offText">Nenhuma Reunião Selecionada</p>
+
+          <div class="row justify-content-start">
+            <div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
+            <div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
+          </div>
+
+          <div class="row justify-content-start">
+            <!-- offText class turns every text to an off design-->
+            <div class="col-6"><p class="text-center offText">Nenhuma reunião<br>agendada para hoje.</p></div>
+            <!-- buttonOff class turns every text to an off design-->
+            <div class="col-6"><button type="submit" class="btnBottom buttonStyle bigButton buttonOff float-end">Iniciar Reunião</button></div>
+          </div>
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle" onclick="newCriteria()">Critérios</button></div>
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle buttonSelected" onclick="portfolioManagerMainPage()">Novo Projeto</button></div>
+            <div class="col-4"><button type="submit" class="btnBottom buttonStyle float-end" onclick="newMeeting()">Agendar Reunião</button></div>
+          </div>
+
+          <div class="user">
+            <div class="userProfilePicArea">
+              <!-- Add user profile pic-->
+            </div>
+            <div class="userProfileInfoArea">
+              <h5 class="text-start">Nome do Usuário</h5>
+              <p class="text-start">Cargo do Usuário</p>
+            </div>
+          </div>
+
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="buttonStyle">Perfil</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle">Configurações</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle float-end">Sair</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="pageContent">
+        <br><h2 class="text-center">Novo Projeto</h2>
+        <br><h5 class="text-center">Selecione os Critérios do Novo Projeto</h5>
+        <h2 class="text-center">Esforço</h2>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="newProjectCriteriaSelector">
+                <div class="criteriaSelectorCriteria"><!-- START OF CRITERIA -->
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div><!-- END OF CRITERIA -->
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério está responsivo e está se adequando ao tamanho máximo da coluna assim como a descrição</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério está responsivo entao eu posso colocar o tamanho que eu quiser e ele irá se adequar</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-center">Benefício</h2>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="newProjectCriteriaSelector">
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+                <div class="criteriaSelectorCriteria">
+                  <div class="d-flex justify-content-center">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h5 id="criteriaName">Nome do Critério</h5></div>
+                      </div>
+                      <div class="col-auto">
+                        <div class="criteriaSelectorName"><h6 class="criteriaSelectorDescription"id="criteriaDescription">Descrição do critério</h6></div>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" id="newProjectDiceStakeholderCommitment">
+                          <option value="0">Zero do Critério</option>
+                          <option value="1">Um do Critério</option>
+                          <option value="2">Dois do Critério</option>
+                          <option value="3">Três do Critério</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary redButton bigButton" onclick="portfolioManagerMainPage()">Cancelar</button>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary whiteButton bigButton" onclick="returnNewProjectPartOne()">Voltar</button>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary greenButton bigButton" onclick="addNewProject()">Concluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

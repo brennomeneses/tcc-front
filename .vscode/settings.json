@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/e48d6a98-65a6-4a2b-9971-7eba0c143815/resourceGroups/tcc-bes/providers/Microsoft.Web/sites/photoclub-front1",
+  "appService.deploySubpath": "."
+}

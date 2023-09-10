@@ -15,36 +15,43 @@
 					<img class="loginLogo img-fluid" src="../img/logos/kokpitLogo.png">
 				</div>
 				<h4 class="text-center">Cadastro</h4>
-				<form>
+				<form id="singUpForm">
 					<div class="mb-3">
 				    <label for="nameSignup" class="form-label">Nome:</label>
-				    <input type="text" class="form-control inputStyle" id="nameSignup">
+				    <input type="text" class="form-control inputStyle" name="nameSignup" id="nameSignup">
 				  </div>
 				  <div class="mb-3">
-				    <label for="usernameSignup" class="form-label">E-mail:</label>
-				    <input type="text" class="form-control inputStyle" id="usernameSignup">
+				    <label for="emailSingup" class="form-label">E-mail:</label>
+				    <input type="text" class="form-control inputStyle" name="emailSingup" id="emailSingup">
 				  </div>
 					<div class="mb-3">
 						<label for="roleSignup" class="form-label">Cargo:</label>
-						<select class="form-select inputStyle" aria-label="Selecione o cargo">
-						  <option value="1" selected>Funcionário</option>
-						  <option value="2">Gerente de Projetos</option>
-						  <option value="3">Gerente de Portfólio</option>p
+						<select name="roleSignup" name="roleSignup" id="roleSignup" class="form-select inputStyle" aria-label="Selecione o cargo">
+						  <option value="Funcionário" selected>Funcionário</option>
+						  <option value="Gerente de Projetos">Gerente de Projetos</option>
+						  <option value="Gerente de Portfólio">Gerente de Portfólio</option>p
 						</select>
 					</div>
 				  <div class="mb-3">
 				    <label for="passwordSignup" class="form-label">Senha:</label>
-				    <input type="password" class="form-control inputStyle" id="passwordSignup">
+				    <input type="password" class="form-control inputStyle" name="passwordSignup" id="passwordSignup">
 				  </div>
 					<div class="mb-3">
 				    <label for="passwordConfirmationSignup" class="form-label">Confirmar Senha:</label>
 				    <input type="password" class="form-control inputStyle" id="passwordConfirmationSignup">
 				  </div>
-					<button type="submit" class="buttonStyle">Entrar</button>
+					<div class="mb-3">
+				    <label for="companyId" class="form-label">ID de empresa:</label>
+				    <input type="password" class="form-control inputStyle" name="companyId" id="companyId">
+				  </div>
 				  <button type="submit" class="buttonStyle float-end">Cadastrar</button>
 				</form>
+				<a href="../index.html">
+					<button class="buttonStyle">Entrar</button>
+				</a>
 			</div>
 			<div class="position-absolute bottom-0 start-50 translate-middle-x"><p>© 2023 - Pontifícia Universidade Católica do Paraná</p></div>
 		</div>
 	</body>
+	<script type="text/javascript" src="../js/api/singUp.js"></script>
 </html>

@@ -15,20 +15,24 @@
 					<img class="loginLogo img-fluid" src="img/logos/kokpitLogo.png">
 				</div>
 				<h4 class="text-center">Entrar</h4>
-				<form>
-				  <div class="mb-3">
-				    <label for="emailLogin" class="form-label">E-mail:</label>
-				    <input type="text" class="form-control inputStyle" id="emailLogin">
+				<form id="loginForm">
+					<div class="mb-3">
+						<label for="emailLogin" class="form-label">E-mail:</label>
+				    <input type="text" class="form-control inputStyle" id="emailLogin" name="emailLogin">
 				  </div>
 				  <div class="mb-3">
-				    <label for="passwordLogin" class="form-label">Senha:</label>
-				    <input type="password" class="form-control inputStyle" id="passwordLogin">
+						<label for="passwordLogin" class="form-label">Senha:</label>
+				    <input type="password" class="form-control inputStyle" id="passwordLogin" name="passwordLogin">
 				  </div>
-					<button type="submit" class="buttonStyle">Cadastrar</button>
 				  <button type="submit" class="buttonStyle float-end">Entrar</button>
 				</form>
+				<a href="./pages/signup.html">
+					<button class="buttonStyle">Cadastrar</button>
+				</a>
 			</div>
 			<div class="position-absolute bottom-0 start-50 translate-middle-x"><p>© 2023 - Pontifícia Universidade Católica do Paraná</p></div>
 		</div>
 	</body>
-</html>
+	<script type="text/javascript" src="js/api/login.js"></script>
+	</html>
+	

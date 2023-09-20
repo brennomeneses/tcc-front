@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/loading.css">
   <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
@@ -72,6 +73,9 @@
         </div>
       </div>
       <div class="pageContent">
+        <div id="loadingModal" class="loading none">
+          <div class="lds-dual-ring"></div>
+        </div>
         <br><h2 class="text-center">Critérios</h2>
         <div class="d-flex justify-content-center">
           <div class="row g-3 align-items-center">
@@ -206,66 +210,68 @@
           </div>
         </div>
         <h2 class="text-center">Adicionar Critério</h2><br>
-        <div class="d-flex justify-content-center">
-          <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <h4>Nome: </h4>
+        <form name="addCriterionForm" id="addCriterionForm">
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <h4>Nome: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="name" name="name">
+              </div>
+              <div class="col-auto">
+                <h4>Descrição: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="description" name="description">
+              </div>
+              <div class="col-auto">
+                <h4>Peso: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="weight" name="weight">
+              </div>
             </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
+          </div><br>
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <h4>Nível 0: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="zero" name="zero">
+              </div>
+              <div class="col-auto">
+                <h4>Nível 1: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="first" name="first">
+              </div>
+              <div class="col-auto">
+                <h4>Nível 2: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="second" name="second">
+              </div>
+              <div class="col-auto">
+                <h4>Nível 3: </h4>
+              </div>
+              <div class="col-auto">
+                <input type="text" class="form-control inputStyle" id="third" name="third">
+              </div>
             </div>
-            <div class="col-auto">
-              <h4>Descrição: </h4>
-            </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
-            </div>
-            <div class="col-auto">
-              <h4>Peso: </h4>
-            </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
+          </div><br>
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <button type="submit" class="btnBottom buttonStyle buttonSide buttonOff">Editar</button>
+                <button type="submit" class="btnBottom buttonStyle buttonSide buttonOff">Remover</button>
+                <input type="submit" id="inforce" name="inforce" value="Adicionar Critério de Esforço" class="btnBottom buttonStyle  buttonSide xlButton">
+                <input type="submit" id="benefit" name="benefit" value="Adicionar Critério de Benefício" class="btnBottom buttonStyle  buttonSide xlButton">
+              </div>
             </div>
           </div>
-        </div><br>
-        <div class="d-flex justify-content-center">
-          <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <h4>Nível 0: </h4>
-            </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
-            </div>
-            <div class="col-auto">
-              <h4>Nível 1: </h4>
-            </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
-            </div>
-            <div class="col-auto">
-              <h4>Nível 2: </h4>
-            </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
-            </div>
-            <div class="col-auto">
-              <h4>Nível 3: </h4>
-            </div>
-            <div class="col-auto">
-              <input type="text" class="form-control inputStyle">
-            </div>
-          </div>
-        </div><br>
-        <div class="d-flex justify-content-center">
-          <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <button type="submit" class="btnBottom buttonStyle buttonSide buttonOff">Editar</button>
-              <button type="submit" class="btnBottom buttonStyle buttonSide buttonOff">Remover</button>
-              <button type="submit" class="btnBottom buttonStyle  buttonSide xlButton">Adicionar Critério de Esforço</button>
-              <button type="submit" class="btnBottom buttonStyle  buttonSide xlButton">Adicionar Critério de Benefício</button>
-            </div>
-          </div>
-        </div>
+        </form>
         <div class="d-flex justify-content-center">
           <div class="row g-3 align-items-center">
             <div class="col-auto">
@@ -279,5 +285,6 @@
       </div>
     </div>
   </div>
-  </body>
+</body>
+<script type="text/javascript" src="../js/api/postCriterion.js"></script>
 </html>

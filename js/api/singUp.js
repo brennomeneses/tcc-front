@@ -5,9 +5,10 @@ document.getElementById('singUpForm').addEventListener('submit', async (event)=>
 
   const formValues = Object.fromEntries(formData)
 
-  console.log(formValues)
+  const loadingScreen = document.getElementById('loadingModal')
 
   try {
+    loadingScreen.classList.remove('none')
     const responseRaw = await fetch('https://photoclub-03.azurewebsites.net/users/', {
       method: 'POST',
       body: JSON.stringify({
@@ -23,14 +24,14 @@ document.getElementById('singUpForm').addEventListener('submit', async (event)=>
     })
     const response = await responseRaw.json()
 
-    if(responseRaw.status != 200)
+    if(responseRaw.status != 200){
+      loadingScreen.classList.add('none')
       alert('erro interno, favor aguardar')
-    else {
+    }else {
       alert('Obrigado por se cadastrar, redirecionando para a pagina de login')
+      loadingScreen.classList.add('none')
       window.location.href = "../index.html";
     }
-      
-
     
   } catch (error) {
     alert("Usuário ou senhas incorretos")

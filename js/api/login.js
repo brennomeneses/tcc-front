@@ -5,7 +5,10 @@ document.getElementById('loginForm').addEventListener('submit', async (event)=> 
 
   const formValues = Object.fromEntries(formData)
 
+  const loadingScreen = document.getElementById('loadingModal')
+
   try {
+    loadingScreen.classList.remove('none')
     const responseRaw = await fetch('https://photoclub-03.azurewebsites.net/users/login', {
     method: 'POST',
     body: JSON.stringify({
@@ -28,6 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event)=> 
     window.location.href = "http://www.w3schools.com";
     
   } catch (error) {
+    loadingScreen.classList.add('none')
     alert("Usuário ou senhas incorretos")
   }
 

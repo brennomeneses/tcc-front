@@ -14,18 +14,20 @@ document.getElementById('addCriterionForm').addEventListener('submit', async (ev
       loadingScreen.classList.remove('none')
       const userToken = sessionStorage.getItem('app:userToken');
       const responseRaw = await fetch('https://photoclub-03.azurewebsites.net/criteria', {
-      method: 'POST',
-      body: JSON.stringify(formValues),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-        'Authorization': `Bearer ${userToken}`
-      }
-    })
+        method: 'POST',
+        body: JSON.stringify(formValues),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Authorization': `Bearer ${userToken}`
+        }
+      })
 
-    const response = await responseRaw.json()
+      const response = await responseRaw.json()
 
-    console.log(response)
-    loadingScreen.classList.add('none')
+      console.log(response)
+      loadingScreen.classList.add('none')
+
+      location.reload()
     } catch (error) {
       loadingScreen.classList.add('none')
       alert("Usuário ou senhas incorretos")

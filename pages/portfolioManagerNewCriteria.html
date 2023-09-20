@@ -3,6 +3,7 @@
   <title>Kokpit</title>
   <script type="text/javascript" src="../js/jquery.js"></script>
   <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/api/getCriteria.js"></script>
   <script type="text/javascript" src="../js/drag.js" defer></script>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -105,42 +106,8 @@
                   </div>
                 </div>
               </div>
-              <div class="criteriaList" id="effortCriteriaList"><!-- All effort criterias must be added here -->
-                <div class="criteria selectedCriteria"><!-- Criteria start -->
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div><!-- Criteria end -->
-
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
-
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
-
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
+              <div class="criteriaList" id="effortCriteriaList">
+                <!-- All effort criterias must be added here -->
               </div>
             </div>
             <div class="col-auto">
@@ -169,42 +136,8 @@
                   </div>
                 </div>
               </div>
-              <div class="criteriaList" id="benefitCriteriaList"><!-- All benefit criterias must be added here -->
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
-
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
-
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
-
-                <div class="criteria">
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaNameArea">Nome do critério</p></div>
-                  <div class="criteriaContent mediumCriteriaSize"><p class="criteriaText" id="criteriaDescriptionArea">Descrição do Critério Descrição do Critério</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaZeroArea">ZERO ZERO</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText"  id="criteriaOneArea">UM UM UM UM</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaTwoArea">DOIS DOIS DOIS DOIS</p></div>
-                  <div class="criteriaContent smallCriteriaSize"><p class="criteriaText" id="criteriaThreeArea">TRÊS TRÊS TRÊS TRÊS</p></div>
-                </div>
+              <div class="criteriaList" id="benefitCriteriaList">
+                <!-- All benefit criterias must be added here -->
               </div>
             </div>
           </div>

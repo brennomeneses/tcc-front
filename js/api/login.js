@@ -8,6 +8,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event)=> 
   const loadingScreen = document.getElementById('loadingModal')
 
   try {
+    debugger
     loadingScreen.classList.remove('none')
     const responseRaw = await fetch('https://photoclub-03.azurewebsites.net/users/login', {
     method: 'POST',

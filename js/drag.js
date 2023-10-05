@@ -4,9 +4,11 @@ const droppables = document.querySelectorAll(".swim-lane");
 draggables.forEach((task) => {
   task.addEventListener("dragstart", () => {
     task.classList.add("is-dragging");
+    console.log("dragstart")
   });
   task.addEventListener("dragend", () => {
     task.classList.remove("is-dragging");
+    console.log("dragend")
   });
 });
 

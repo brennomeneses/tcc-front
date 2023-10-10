@@ -1,0 +1,145 @@
+<html>
+<head>
+  <title>Kokpit</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/drag.js" defer></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <nav class="navbar navbarStyle position-fixed">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
+        </a>
+      </div>
+    </nav>
+    <div class="fullContent">
+      <div class="sidebar">
+        <h3 class="sidebarTopText text-center">Projetos</h3>
+        <!-- Add here all meetings -->
+        <div class="meetings">
+          <!-- Meeting Object Start -->
+          <div class="reuniao"><h4 class="text-center reuniaoText">Projeto 1</h4>
+          </div>
+          <!-- Meeting Object End -->
+        </div>
+
+        <div class="sidebarFooter fixed-bottom">        
+          <button type="submit" class="btnBottom buttonStyle bigButton col-12 buttonSelected">Adicionar Atividade</button>
+          
+          <div class="user">
+            <div class="userProfilePicArea">
+              <!-- Add user profile pic-->
+            </div>
+            <div class="userProfileInfoArea">
+              <h5 class="text-start" id="username">Nome do Usuário</h5>
+              <p class="text-start" id="userrole">Cargo do Usuário</p>
+            </div>
+          </div>
+
+          <div class="row justify-content-start">
+            <div class="col-4"><button type="submit" class="buttonStyle">Perfil</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle">Configurações</button></div>
+            <div class="col-4"><button type="submit" class="buttonStyle float-end">Sair</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="pageContent">
+        <br><h2 class="text-center">Nova Atividade</h2>
+        <br><h5 class="text-center">Informações Gerais</h5>
+        <form id="basicInfoProject">
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <div class="labelArea"><h4>Título: </h4></div>
+              </div>
+              <div class="col-auto">
+                <div class="longInput"><input type="text" class="form-control inputStyle" name="newProjectName" id="newProjectName"></div>
+              </div>
+            </div>
+          </div><br>
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <div class="d-flex justify-content-center">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <div class="labelArea">
+                        <h4>Data Inicial: </h4>
+                      </div>  
+                    </div>
+                    <div class="col-auto">
+                      <input type="date">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="d-flex justify-content-center">
+                  <div class="row g-6 align-items-center">
+                      <div class="col-auto">
+                        <div class="labelArea">
+                          <h4 >Data Estimada: </h4>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <input type="date" >
+                      </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div><br>
+                    
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <div class="labelArea">
+                  <h4 style="width: 250px">Funcionário: </h4>
+                </div>
+              </div>
+              <div class="col-auto">
+                <select style="width: 700px; margin-left: 20px;" class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" name="newProjectSelectProjectManager" id="newProjectSelectProjectManager">
+                  <option value="1">Nome do Funcionário</option>
+                  <option value="2">Nome do Funcionário</option>
+                  <option value="3">Nome do Funcionário</option>
+                </select>
+              </div>
+            </div>
+          </div><br/>   
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <div class="labelArea"><h4>Descrição: </h4></div>
+              </div>
+              <div class="col-auto">
+                <div class="longInput">
+                    <textarea style="width: 800px; height: 300px;" class="form-control inputStyle" name="newProjectDescription" id="newProjectDescription">
+                    </textarea>
+                  </div>
+              </div>
+            </div>
+          </div><br>       
+          <div class="d-flex justify-content-center">
+            <div class="row g-3 align-items-center">
+              <div class="col-auto">
+                <button type="submit" class="buttonStyleSecondary redButton bigButton" onclick="">Cancelar</button>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="buttonStyleSecondary greenButton bigButton" onclick="">Criar Atividade</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script type="text/javascript" src="../js/api/getUserInfo.js"></script>
+  <script type="text/javascript" src="../js/api/getProjects.js"></script>
+</html>

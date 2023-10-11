@@ -1,0 +1,116 @@
+<html>
+<head>
+  <title>Kokpit</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="../js/drag.js" defer></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div id="page">
+    <nav class="navbar navbarStyle position-fixed">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../img/logos/kokpitLogo.png" alt="Logo" height="55px" class="d-inline-block align-text-top mainPageLogo">
+        </a>
+      </div>
+    </nav>
+    <div class="fullContent">
+      <div class="sidebar">
+        <h3 class="sidebarTopText text-center">Projetos</h3>
+        <div class="projectsMatrixPage"></div>
+
+        <div class="sidebarFooter fixed-bottom">
+
+          <div class="row justify-content-start">
+            <div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
+            <div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
+          </div>
+
+          <button type="submit" class="btnBottom buttonStyle bigButton col-12">Finalizar Reunião</button>
+
+          <div class="user">
+            <div class="userProfilePicArea">
+              <!-- Add user profile pic-->
+            </div>
+            <div class="userProfileInfoArea">
+              <h5 class="text-start">Nome do Usuário</h5>
+              <p class="text-start">Cargo do Usuário</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pageContent">
+        <div class="effortBenefitLeftSide">
+          <h3 class="benefitTextAlignment">BENEFÍCIO</h3>
+        </div>
+        <div class="effortBenefitMatrixArea">
+          <div class="matrixGrid">
+
+          </div>
+        </div>
+        <div class="effortBenefitBottomSide">
+          <h3 class="effortTextAlignment">ESFORÇO</h3>
+        </div>
+        <br><h2 class="text-center" id="matrixPageSelectedProjectName"></h2>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaSMP"><h5>Descrição:</h5></div>
+            </div>
+            <div class="col-auto">
+              <h5 id="matrixPageSelectedProjectDescription" class="matrixPageSelectedProjectInformation"></h5>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaSMP"><h5>Stakeholder:</h5></div>
+            </div>
+            <div class="col-auto">
+              <h5 id="matrixPageSelectedProjectStakeholder" class="matrixPageSelectedProjectInformation"></h5>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaSMP"><h5>DICE:</h5></div>
+            </div>
+            <div class="col-auto">
+              <h5 id="matrixPageSelectedProjectDICE" class="matrixPageSelectedProjectInformation"></h5>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <div class="labelAreaSMP"><h5>Custo:</h5></div>
+            </div>
+            <div class="col-auto">
+              <h5 id="matrixPageSelectedProjectCost" class="matrixPageSelectedProjectInformation"></h5>
+            </div>
+          </div>
+        </div><br>
+        <div class="d-flex justify-content-center">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary redButton bigButton" id="removeProject" >Reprovar</button>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary whiteButton bigButton" id="cancelProject">Cancelar Projeto</button>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="buttonStyleSecondary greenButton bigButton" id="approveProject">Aprovar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

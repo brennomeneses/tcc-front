@@ -1,5 +1,8 @@
 $(document).ready(function(){
   updateSystemTime();
+  addSelectedProjectsToMatrix();
+  listenToSelectProjectEvent();
+  listenToKeyProjectEvents();
 });
 
 function updateSystemTime(){
@@ -51,4 +54,131 @@ function newProjectPartTwo(){
 function addNewProject(){
   // Do some stuff
   location.href = "portfolioManagerMainPage.html";
+}
+
+// ROW 1 - 6
+// COL 1 - 10
+var selectedProjects = [
+  {
+    position: "row1Col1",
+    name: "Primeiro Projeto",
+    description: "Descrição do primeiro projeto descrição do primeiro projeto  descrição do primeiro projeto  descrição do primeiro projeto  descrição do primeiro projeto  descrição do primeiro projeto  descrição do primeiro projeto ",
+    stakeholder: "Nome do Stakeholder",
+    dice: "Dice projeto 1",
+    cost: 12000
+  },
+  {
+    position: "row6Col10",
+    name: "Último Projeto",
+    description: "Descrição do último projeto descrição do último projeto  descrição do último projeto  descrição do último projeto  descrição do último projeto  descrição do último projeto  descrição do último projeto ",
+    stakeholder: "Nome do Stakeholder",
+    dice: "Dice projeto 2",
+    cost: 51265
+  },
+  {
+    position: "row3Col5",
+    name: "Projeto do Meio",
+    description: "Descrição do Projeto",
+    stakeholder: "Nome do Stakeholder",
+    dice: "Dice projeto 3",
+    cost: 27000
+  },
+  {
+    position: "row1Col10",
+    name: "Projeto do Topo",
+    description: "Descrição do Projeto",
+    stakeholder: "Nome do Stakeholder",
+    dice: "Dice projeto 4",
+    cost: 15000
+  }
+];
+
+function addSelectedProjectsToMatrix(){
+  // Prevent memory dump issues
+  $(".matrixGrid").html("");
+  $(".projectsMatrixPage").html("");
+  // Matrix format is 6x10
+  // The higher the line number, the lower the benefit of the project
+  // The higher the column number, the higher the effort of the project
+
+  for (i = 1; i < 7; i++){
+    for (j = 1; j < 11; j++){
+      $(".matrixGrid").append('<div class="matrixItem" id="row'+i+'Col'+j+'"></div>');
+    }
+  }
+  if (selectedProjects.length == 0){
+    location.href = "portfolioManagerMainPage.html";
+  }
+  for (i = 0; i < selectedProjects.length; i++) {
+    const project = selectedProjects[i];
+
+    $("#" + project.position).html(project.name).addClass("matrixItemAdded " + project.position);
+    $(".projectsMatrixPage").append('<div id="'+project.position+'" class="projectMatrixPageList"><h4 class="text-center projectText">'+project.name+'</h4></div>');
+
+  }
+
+  $("#matrixPageSelectedProjectName").html(selectedProjects[0].name);
+  $("#matrixPageSelectedProjectDescription").html(selectedProjects[0].description);
+  $("#matrixPageSelectedProjectStakeholder").html(selectedProjects[0].stakeholder);
+  $("#matrixPageSelectedProjectDICE").html(selectedProjects[0].dice);
+  $("#matrixPageSelectedProjectCost").html("R$ "+ selectedProjects[0].cost);
+
+  listenToSelectProjectEvent();
+  listenToKeyProjectEvents();
+
+}
+
+var currentSelectedProject = selectedProjects[0].position;
+
+function listenToSelectProjectEvent(){
+  for (i = 0; i < selectedProjects.length; i++) {
+    const project = selectedProjects[i];
+    $("#" + project.position).click(function(){
+      currentSelectedProject = project.position;
+      $(this).addClass("projectListSelected");
+      $("#matrixPageSelectedProjectName").html(project.name);
+      $("#matrixPageSelectedProjectDescription").html(project.description);
+      $("#matrixPageSelectedProjectStakeholder").html(project.stakeholder);
+      $("#matrixPageSelectedProjectDICE").html(project.dice);
+      $("#matrixPageSelectedProjectCost").html("R$ "+ project.cost);
+    });
+
+    $("." + project.position).click(function(){
+      currentSelectedProject = project.position;
+      $(this).addClass("projectListSelected");
+      $("#matrixPageSelectedProjectName").html(project.name);
+      $("#matrixPageSelectedProjectDescription").html(project.description);
+      $("#matrixPageSelectedProjectStakeholder").html(project.stakeholder);
+      $("#matrixPageSelectedProjectDICE").html(project.dice);
+      $("#matrixPageSelectedProjectCost").html("R$ "+ project.cost);
+    });
+
+
+  }
+}
+
+function listenToKeyProjectEvents(){
+  $("#removeProject").click(function(){
+    const filteredProjects = selectedProjects.filter(project => project.position !== currentSelectedProject);
+    selectedProjects = filteredProjects;
+    addSelectedProjectsToMatrix();
+    listenToSelectProjectEvent();
+    listenToKeyProjectEvents();
+  });
+
+  $("#cancelProject").click(function(){
+    const filteredProjects = selectedProjects.filter(project => project.position !== currentSelectedProject);
+    selectedProjects = filteredProjects;
+    addSelectedProjectsToMatrix();
+    listenToSelectProjectEvent();
+    listenToKeyProjectEvents();
+  });
+
+  $("#approveProject").click(function(){
+    const filteredProjects = selectedProjects.filter(project => project.position !== currentSelectedProject);
+    selectedProjects = filteredProjects;
+    addSelectedProjectsToMatrix();
+    listenToSelectProjectEvent();
+    listenToKeyProjectEvents();
+  });
 }

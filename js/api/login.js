@@ -27,9 +27,9 @@ document.getElementById('loginForm').addEventListener('submit', async (event)=> 
   if(response.role === 'Gerente de Portfólio')
     window.location.href = "pages/portfolioManagerMainPage.html";
   else if (response.role === 'Gerente de Projetos')
-    window.location.href = "http://www.w3schools.com";
+    window.location.href = "pages/projectManagerMainPage.html";
   else if (response.role === 'Funcionário')
-    window.location.href = "http://www.w3schools.com";
+    window.location.href = "pages/employeeMainPage.html";
     
   } catch (error) {
     loadingScreen.classList.add('none')

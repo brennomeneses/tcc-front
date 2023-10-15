@@ -1,4 +1,5 @@
-const draggables = document.querySelectorAll(".task");
+function kanbanEvent() {
+  const draggables = document.querySelectorAll(".task");
 const droppables = document.querySelectorAll(".swim-lane");
 
 draggables.forEach((task) => {
@@ -46,3 +47,6 @@ const insertAboveTask = (zone, mouseY) => {
 
   return closestTask;
 };
+
+}
+

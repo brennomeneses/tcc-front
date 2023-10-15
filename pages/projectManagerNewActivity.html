@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../js/api/postTasks.js"></script>
 </head>
 <body>
   <div id="page">
@@ -30,7 +31,10 @@
         </div>
 
         <div class="sidebarFooter fixed-bottom">        
-          <button type="submit" class="btnBottom buttonStyle bigButton col-12 buttonSelected">Adicionar Atividade</button>
+          <a href="./projectManagerMainPage.html">
+            <button type="submit" class="btnBottom buttonStyle bigButton col-12 buttonSelected">Adicionar Atividade</button>
+          </a>
+          
           
           <div class="user">
             <div class="userProfilePicArea">
@@ -74,7 +78,7 @@
                       </div>  
                     </div>
                     <div class="col-auto">
-                      <input type="date">
+                      <input type="date" name="newTaskDate" id="newTaskDate">
                     </div>
                   </div>
                 </div>
@@ -88,7 +92,7 @@
                         </div>
                       </div>
                       <div class="col-auto">
-                        <input type="date" >
+                        <input type="date" name="newTaskEstimatedDate" id="newTaskEstimatedDate">
                       </div>
                   </div>
                 </div>  
@@ -119,8 +123,7 @@
               </div>
               <div class="col-auto">
                 <div class="longInput">
-                    <textarea style="width: 800px; height: 300px;" class="form-control inputStyle" name="newProjectDescription" id="newProjectDescription">
-                    </textarea>
+                    <textarea style="width: 800px; height: 300px;" class="form-control inputStyle" name="newProjectDescription" id="newProjectDescription"></textarea>
                   </div>
               </div>
             </div>

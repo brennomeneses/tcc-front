@@ -12,8 +12,8 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   const response = await responseRaw.json()
   
-  document.getElementById('userrole').innerHTML = `${response.role}`
-  document.getElementById('username').innerHTML = `${response.name}`
+  document.querySelector("h5.text-start").innerHTML = `${response.role}`
+  document.querySelector("p.text-start").innerHTML = `${response.name}`
 
   } catch(error) {
     console.log(error)

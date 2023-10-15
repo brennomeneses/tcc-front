@@ -1,6 +1,25 @@
 window.addEventListener("DOMContentLoaded", async ()=> {
     sessionStorage.removeItem("app:ProjectCache")
 
+    const token = sessionStorage.getItem("app:userToken")
+
+    const responseRaw = await fetch("https://photoclub-03.azurewebsites.net/users", {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    const response = await responseRaw.json()
+
+    response.forEach((e) => {
+      const option = document.createElement("option")
+      option.value = e.id
+      option.text = e.name
+      document.getElementById("newProjectSelectProjectManager").add(option)
+    })
+    
+
     document.getElementById('basicInfoProject').addEventListener('submit', (event) => {
       event.preventDefault()
   
@@ -21,7 +40,5 @@ window.addEventListener("DOMContentLoaded", async ()=> {
           futureUsersCommmitment: formValues.newProjectDiceFutureUsersCommitment
         }
       }))
-
-    console.log(formValues)
     })
 })

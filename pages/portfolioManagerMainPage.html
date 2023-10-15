@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../js/api/getReunions.js"></script>
 </head>
 <body>
   <div id="page">
@@ -74,26 +75,8 @@
       <div class="pageContent">
 
         <!-- Modal Start -->
-        <div class="modal fade" id="projectInformationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5"><span id="projectTitleModal">Título do Projeto</span>
-                <br><span class="projectStakeholderModal">Stakeholder: <span id="stakeholderName">Nome do Stakeholder</span></span></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <h6>Descrição do Projeto:</h6>
-                <p>Lorem ipsum dolor sit amet. Et magni dolor aut quod rerum nam ullam voluptas. Sit rerum adipisci eum deserunt rerum et suscipit assumenda sed commodi assumenda eos omnis voluptatem. Sit sint dolorem et inventore sint quo tempore dolor ut dolores corrupti ut aliquid corporis aut quisquam animi.</p>
-                <h6>Custo Estimado: <span class="fw-normal">R$ 150.000</span></h6>
-                <h6>Duração Estimada: <span class="fw-normal">6 meses</span></h6><br>
-                <div class="row justify-content-start">
-                  <div class="col-6"><button type="submit" class="buttonStyle bigButton">Visualizar Critérios</button></div>
-                  <div class="col-6"><button type="submit" class="buttonStyle bigButton">Visualizar DICE</button></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div id="modalsContainer">
+          
         </div>
         <!-- Modal End -->
 

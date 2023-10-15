@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../js/api/addParticipantsMeeting.js"></script>
+  <script type="text/javascript" src="../js/api/getReunions.js"></script>
+  <script type="text/javascript" src="../js/api/getUserInfo.js"></script>
 </head>
 <body>
   <div id="page">
@@ -102,7 +105,7 @@
               <h4>Data: </h4>
             </div>
             <div class="col-auto">
-              <input type="date">
+              <input id="meetingDateInput" type="datetime-local">
             </div>
           </div>
         </div><br>
@@ -113,50 +116,15 @@
               <h4>Participantes <span id="numberOfParticipants">(3)</span></h4>
             </div>
             <div class="col-auto">
-              <button type="submit" class="buttonStyle bigButton">Adicionar Participante</button>
+              <select style="display: inline;" class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" name="participant" id="participant">
+              </select>
+              <button type="submit" class="buttonStyle bigButton" id="btnAddParticipant">Adicionar Participante</button>
             </div>
           </div>
         </div>
 
         <div class="participantes"><!--Participant Area Start-->
           <!--PARTICPANT START-->
-          <div class="d-flex justify-content-center">
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <h5 class="invitedName">Nome do Participante</h5>
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="buttonStyle">Remover</button>
-              </div>
-              <hr>
-            </div>
-          </div>
-          <!--PARTICPANT END-->
-
-          <div class="d-flex justify-content-center">
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <h5 class="invitedName">Nome do Participante</h5>
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="buttonStyle">Remover</button>
-              </div>
-              <hr>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <h5 class="invitedName">Nome do Participante</h5>
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="buttonStyle">Remover</button>
-              </div>
-              <hr>
-            </div>
-          </div>
-
         </div><!--Participant Area End-->
         <br>
         <div class="d-flex justify-content-center">
@@ -165,52 +133,14 @@
               <h4>Projetos <span id="numberOfProjects">(3)</span></h4>
             </div>
             <div class="col-auto">
-              <button type="submit" class="buttonStyle bigButton">Adicionar Projeto</button>
+              <select style="display: inline;" class="form-select inputStyle form-select-lg selectList" aria-label="Default select example" name="projects" id="projects">
+              </select>
+              <button type="submit" class="buttonStyle bigButton" id="btnAddProject">Adicionar Projeto</button>
             </div>
           </div>
         </div>
-        <div class="projects"><!--Projects Area Start-->
-          <!--PROJECT START-->
-          <div class="d-flex justify-content-center">
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <h5 class="projectName" id="projectNameList">Nome do Projeto</h5>
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="buttonStyle bigButton bigButtonbuttonSide" id="projectInformationList" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações</button>
-                <button type="submit" class="buttonStyle bigButton buttonSide" id="projectUpdate">Atualizar Cenário</button>
-                <button type="submit" class="buttonStyle buttonSide" id="projectRemoveList">Remover</button>
-              </div>
-              <hr>
-            </div>
-          </div>
-          <!--PROJECT END-->
-          <div class="d-flex justify-content-center">
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <h5 class="projectName" id="projectNameList">Nome do Projeto</h5>
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="buttonStyle bigButton bigButtonbuttonSide" id="projectInformationList" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações</button>
-                <button type="submit" class="buttonStyle bigButton buttonSide" id="projectUpdate">Atualizar Cenário</button>
-                <button type="submit" class="buttonStyle buttonSide" id="projectRemoveList">Remover</button>
-              </div>
-              <hr>
-            </div>
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="row g-3 align-items-center">
-              <div class="col-auto">
-                <h5 class="projectName" id="projectNameList">Nome do Projeto</h5>
-              </div>
-              <div class="col-auto">
-                <button type="submit" class="buttonStyle bigButton bigButtonbuttonSide" id="projectInformationList" data-bs-toggle="modal" data-bs-target="#projectInformationModal">Informações</button>
-                <button type="submit" class="buttonStyle bigButton buttonSide" id="projectUpdate">Atualizar Cenário</button>
-                <button type="submit" class="buttonStyle buttonSide" id="projectRemoveList">Remover</button>
-              </div>
-              <hr>
-            </div>
-          </div>
+        <div class="projectsContainer">
+          <!--Projects Area Start-->
         </div><!--Project Area End-->
         <br>
         <div class="d-flex justify-content-center">
@@ -219,7 +149,7 @@
               <button type="submit" class="buttonStyleSecondary redButton bigButton" onclick="portfolioManagerMainPage()">Cancelar</button>
             </div>
             <div class="col-auto">
-              <button type="submit" class="buttonStyleSecondary greenButton bigButton" onclick="scheduleMeeting()">Concluir</button>
+              <button type="submit" class="buttonStyleSecondary greenButton bigButton" id="finishMeeting">Concluir</button>
             </div>
           </div>
         </div>

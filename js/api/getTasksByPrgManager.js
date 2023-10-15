@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.log(response)
 
     let projectCard = '';
-    let projectModal = '';
 
     response.map(e => {
       console.log()
@@ -86,6 +85,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     })
 
     document.querySelector('#backlog .swim-lane.colContent').innerHTML = projectCard
+    kanbanEvent()
   } catch (error) {
     console.log(error)
   }

@@ -25,6 +25,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   document.getElementsByClassName("meetings")[0].innerHTML = reunionElements
 
-  if(!window.location.pathname === "/pages/projectManagerNewActivity.html")
+  if(!(window.location.pathname === "/pages/projectManagerNewActivity.html"))
     document.querySelector(".sidebarFooter.fixed-bottom > a").setAttribute("href", `./projectManagerNewActivity.html?projectId=${projectId}`)
 })

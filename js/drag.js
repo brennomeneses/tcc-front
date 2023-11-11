@@ -7,9 +7,9 @@ draggables.forEach((task) => {
     task.classList.add("is-dragging");
     console.log("dragstart")
   });
-  task.addEventListener("dragend", () => {
+  task.addEventListener("dragend", (event) => {
     task.classList.remove("is-dragging");
-    console.log("dragend")
+    console.log(event.target.parentElement.parentElement.id)
   });
 });
 

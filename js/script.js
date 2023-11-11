@@ -93,6 +93,8 @@ var selectedProjects = [
   }
 ];
 
+getProjects().then(v => {selectedProjects = v})
+
 function addSelectedProjectsToMatrix(){
   // Prevent memory dump issues
   $(".matrixGrid").html("");

@@ -34,20 +34,9 @@
         </div>
 
         <div class="sidebarFooter fixed-bottom">
-
-          <button type="submit" class="btnBottom buttonStyle bigButton buttonOff col-12">Exibir Resumo da Reunião</button>
-          <p class="text-center offText">Nenhuma Reunião Selecionada</p>
-
           <div class="row justify-content-start">
             <div class="col-9"><h4 id="currentDay" class="text-center btnBottom"></h4></div>
             <div class="col-3"><h4 id="currentTime" class="text-center btnBottom"></h4></div>
-          </div>
-
-          <div class="row justify-content-start">
-            <!-- offText class turns every text to an off design-->
-            <div class="col-6"><p class="text-center offText">Nenhuma reunião<br>agendada para hoje.</p></div>
-            <!-- buttonOff class turns every text to an off design-->
-            <div class="col-6"><button type="submit" class="btnBottom buttonStyle bigButton buttonOff float-end">Iniciar Reunião</button></div>
           </div>
           <div class="row justify-content-start">
             <div class="col-4"><button type="submit" class="btnBottom buttonStyle" onclick="newCriteria()">Critérios</button></div>
@@ -127,19 +116,19 @@
               </div>
             </div><!--COLUMN END-->
 
-            <div class="col">
+            <div class="col" id="doing">
               <div class="colHeader"><h3>Em Andamento</h3></div>
               <div class="swim-lane colContent">
 
               </div>
             </div>
-            <div class="col">
+            <div class="col" id="testing">
               <div class="colHeader"><h3>Testando</h3></div>
               <div class="swim-lane colContent">
 
               </div>
             </div>
-            <div class="col">
+            <div class="col" id="done">
               <div class="colHeader"><h3>Concluído</h3></div>
               <div class="swim-lane colContent">
 

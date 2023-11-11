@@ -15,13 +15,15 @@ window.addEventListener("DOMContentLoaded", async () => {
     const date = new Date(e.date)
   
     return `
-    <div class="reuniao">
-      <h4 class="text-center reuniaoText">
-        <span id="meetingDate">${date.toLocaleDateString()}<span class="horaReuniao">
-        <span id="meetingStartTime">${date.toLocaleTimeString()}</span>
-        </span>
-      </h4>
-    </div>
+    <a href="portfolioManagerEBMatrix.html?reunionId=${e.id}">
+      <div class="reuniao">
+        <h4 class="text-center reuniaoText">
+          <span id="meetingDate">${date.toLocaleDateString()}<span class="horaReuniao">
+          <span id="meetingStartTime">${date.toLocaleTimeString()}</span>
+          </span>
+        </h4>
+      </div>
+    </a>
     `
 }).join("\n")
 
